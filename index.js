@@ -181,7 +181,7 @@ let price = 10
 for (let i = 1; i <= 10; i++){
 console.log(i*price)
 }
-*/
+
 
 //For5 - Дано вещественное число — цена 1 кг конфет. Вывести стоимость 0.1, 0.2, ..., 1 кг конфет.
 
@@ -190,3 +190,32 @@ let price = 3
 for (let i = 1; i <= 10; i++){
 console.log((i*price)/10)
 }
+
+
+//Begin33 - Известно, что X кг конфет стоит A рублей. Определить, сколько стоит 1 кг и Y кг этих же конфет.
+
+{
+function CalculatePrice (candyMass, candyPrice, neededMass) 
+    {
+    let pricePerKilo = candyPrice/candyMass;
+    let pricePerY = pricePerKilo * neededMass;
+    console.log (`Один килограмм стоит: ${pricePerKilo}`, '||', `Ваше количество килограмм стоит: ${pricePerY}`)
+    }
+}
+
+CalculatePrice (3,12,5)
+*/
+
+//Begin34 - Известно, что X кг шоколадных конфет стоит A рублей, а Y кг ирисок стоит B рублей. 
+//Определить, сколько стоит 1 кг шоколадных конфет, 1 кг ирисок, а также во сколько раз шоколадные конфеты дороже ирисок.
+{
+function CalculateCandyPrices (chocCandyMass, chocCandyPrice, toffeeCandyMass, toffeeCandyPrice) {
+    let priceChocPerKilo = chocCandyPrice / chocCandyMass;
+    let priceToffeePerKilo  = toffeeCandyPrice / toffeeCandyMass;
+    let howMuch = priceChocPerKilo / priceToffeePerKilo;
+    console.log (`Один килограмм шоколадных конфет стоит: ${priceChocPerKilo}`, '||', `Один килограмм ирисок стоит: ${priceToffeePerKilo}`, '||', 
+    `Шоколадные конфеты дороже ирисок в (раз): ${howMuch}`)
+    }
+}
+CalculateCandyPrices(20,60,10,20)
+
