@@ -204,7 +204,7 @@ function CalculatePrice (candyMass, candyPrice, neededMass)
 }
 
 CalculatePrice (3,12,5)
-*/
+
 
 //Begin34 - Известно, что X кг шоколадных конфет стоит A рублей, а Y кг ирисок стоит B рублей. 
 //Определить, сколько стоит 1 кг шоколадных конфет, 1 кг ирисок, а также во сколько раз шоколадные конфеты дороже ирисок.
@@ -219,3 +219,55 @@ function CalculateCandyPrices (chocCandyMass, chocCandyPrice, toffeeCandyMass, t
 }
 CalculateCandyPrices(20,60,10,20)
 
+
+//Integer30 - Дан номер некоторого года (целое положительное число). 
+//Определить соответствующий ему номер столетия, учитывая, что, к примеру, началом 20 столетия был 1901 год.
+
+{
+let yearRnd = Math.floor(Math.random()*1000 + 1000)
+let CalculateCentury = year => Math.ceil(year/100);
+console.log(`Год: ${yearRnd}`, `Столетие: ${CalculateCentury(yearRnd)}`)
+}
+
+
+//Boolean31 - Даны целые числа a, b, c, являющиеся сторонами некоторого треугольника. 
+//Проверить истинность высказывания: «Треугольник со сторонами a, b, c является равнобедренным».
+
+{
+let IsIsosceles = (a,b,c) => {
+    if (a===b || a===c || b===c) {
+        return true;
+    }
+    return false;
+}
+console.log(IsIsosceles(4,6,4))
+}
+
+
+//Boolean33 - Даны целые числа a, b, c. Проверить истинность высказывания: «Существует треугольник со сторонами a, b, c».
+
+{
+    let IsIsosceles = (a,b,c) => {
+        if (a+b > c || a+c > b || b+c > a) {
+            return true;
+        }
+        return false;
+    }
+    console.log(IsIsosceles(1,1,2))
+    }
+*/
+
+//If20 - На числовой оси расположены три точки: A, B, C. 
+//Определить, какая из двух последних точек (B или C) расположена ближе к A, и вывести эту точку и ее расстояние от точки A.
+
+{
+    let definePoint = (a,b,c) => {
+        let ba = b - a;
+        let ca = c - a;
+        if (ba < ca) {
+            return console.log(`Точка B расположена ближе: ${b}`);
+        }
+        console.log(`Точка C расположена ближе: ${c}`);
+    }
+    definePoint(1,15,4)
+    }
