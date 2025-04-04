@@ -310,10 +310,11 @@ let SumDegrees = (a, n) => {
 }
 console.log(SumDegrees(3,3))
 }
-*/
+
 
 //For20 - Дано целое число N (> 0). Используя один цикл, найти сумму "1! + 2! + 3! + ... + N!"
 
+{
 let Factorial = n => {
     let sum = 0
     let k = 1
@@ -324,3 +325,38 @@ let Factorial = n => {
     return sum;
 }
 console.log(Factorial(6))
+}
+
+
+//For21 - Дано целое число N (> 0). Используя один цикл, найти сумму "1 + 1/(1!) + 1/(2!) + 1/(3!) + ... + 1/(N!)" 
+// (выражение N! — N–факториал — обозначает произведение всех целых чисел от 1 до N: "N! = 1·2·...·N"). 
+// Полученное число является приближенным значением константы e = exp(1).
+
+{
+let FactorialExp = n => {
+    let sum = 1
+    let k = 1
+    for (i = 1; i <= n; i++) {
+        k = k*i
+        sum += 1/k
+    }
+    return sum;
+}
+console.log(FactorialExp(4))
+}
+*/
+
+//For22 - Дано вещественное число X и целое число N (>0). Найти значение выражения "1+X +X^2/(2!)+...+X^N/(N!)"
+
+{
+    let FactorialExpression = (x,n) => {
+        let sum = 1
+        let k = 1
+        for (i = 1; i <= n; i++) {
+            k = k*i
+            sum += Math.pow(x,i)/k
+        }
+        return sum;
+    }
+    console.log(FactorialExpression(2,3))
+    }
