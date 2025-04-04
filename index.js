@@ -255,13 +255,13 @@ console.log(IsIsosceles(4,6,4))
     }
     console.log(IsIsosceles(1,1,2))
     }
-*/
+
 
 //If20 - На числовой оси расположены три точки: A, B, C. 
 //Определить, какая из двух последних точек (B или C) расположена ближе к A, и вывести эту точку и ее расстояние от точки A.
 
 {
-    let definePoint = (a,b,c) => {
+    let DefinePoint = (a,b,c) => {
         let ba = b - a;
         let ca = c - a;
         if (ba < ca) {
@@ -269,5 +269,58 @@ console.log(IsIsosceles(4,6,4))
         }
         console.log(`Точка C расположена ближе: ${c}`);
     }
-    definePoint(1,15,4)
+    DefinePoint(1,15,4)
     }
+
+
+//If29 - Дано целое число. Вывести его строку-описание вида «отрицательное четное число», «нулевое число», «положительное нечетное число» и т. д.
+
+{
+function DisplayDescr (n) {
+    if (Math.sign(n) === -1 && n % 2 === 0) {
+        console.log('Отрицательное четное число');
+    }
+    else if (Math.sign(n) === -1 && n % 2 === 1) {
+        console.log('Отрицательное нечетное число');
+    }
+    else if (Math.sign(n) === 1 && n % 2 === 0) {
+        console.log('Положительное четное число');
+    }
+    else if (Math.sign(n) === 1 && n % 2 === 1) {
+        console.log('Положительное нечетное число');
+    }
+    else {
+        console.log('Нулевое число');
+    }
+}
+}
+
+DisplayDescr(14589)
+
+
+//For17 - Дано вещественное число A и целое число N (>0). Используя один цикл, найти сумму "1 + A + A^2 + A^3 + ... + A^N"
+
+{
+let SumDegrees = (a, n) => {
+    let k = 0;
+    for (i=0; i<= n; i++) {
+        k += Math.pow(a,i);
+    }
+    return k;
+}
+console.log(SumDegrees(3,3))
+}
+*/
+
+//For20 - Дано целое число N (> 0). Используя один цикл, найти сумму "1! + 2! + 3! + ... + N!"
+
+let Factorial = n => {
+    let sum = 0
+    let k = 1
+    for (i = 1; i <= n; i++) {
+        k = k*i
+        sum += k
+    }
+    return sum;
+}
+console.log(Factorial(6))
