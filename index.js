@@ -344,7 +344,7 @@ let FactorialExp = n => {
 }
 console.log(FactorialExp(4))
 }
-*/
+
 
 //For22 - Дано вещественное число X и целое число N (>0). Найти значение выражения "1+X +X^2/(2!)+...+X^N/(N!)"
 
@@ -360,3 +360,70 @@ console.log(FactorialExp(4))
     }
     console.log(FactorialExpression(2,3))
     }
+
+//while7 - Дано целое число N (> 0). Найти наименьшее целое положительное число K, квадрат которого превосходит N: K^2 > N
+
+{
+let findMinNumber = (n) => {
+let k = 0;
+while (Math.pow(k,2) <= n) {
+    k++;
+}
+return k;
+}
+console.log(findMinNumber(16))
+}
+
+
+
+//while9 - Дано целое число N (>1). Найти наименьшее целое число K, при котором выполняется неравенство: 3^K > N.
+
+{
+    let findMinNumber = (n) => {
+    let k = 0;
+    while (Math.pow(3,k) <= n) {
+        k++;
+    }
+    return k;
+    }
+    console.log(findMinNumber(27))
+}
+
+
+
+//while17 - Дано целое число N (>0). 
+// Используя операции деления нацело и взятия остатка от деления, вывести все его цифры, начиная с самой правой (разряда единиц)
+
+{
+let displayDigits = (n) => {
+    while (n > 10) {
+        console.log(n % 10)
+        n = Math.floor(n / 10);
+    }
+    return n;
+}
+console.log(displayDigits(141))
+}
+
+*/
+
+//while24 - Дано целое число N (> 1). Проверить, является ли число N числом Фибоначчи. 
+// Если является, то вывести TRUE, если нет — вывести FALSE.
+
+let IsFibonacci = (n) => {
+    let i = 1;
+    let j = 1;
+    let k = 0;
+    let m;
+    while (n > k) {
+        k = i + j
+        i = j;
+        j = k;
+        m = (n === k)
+    }
+    return m;
+}
+console.log(IsFibonacci(144))
+
+
+
