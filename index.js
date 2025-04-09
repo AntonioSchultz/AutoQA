@@ -360,8 +360,9 @@ console.log(FactorialExp(4))
     }
     console.log(FactorialExpression(2,3))
     }
+*/
 
-//while7 - Дано целое число N (> 0). Найти наименьшее целое положительное число K, квадрат которого превосходит N: K^2 > N
+/* While7 - Дано целое число N (> 0). Найти наименьшее целое положительное число K, квадрат которого превосходит N: K^2 > N
 
 {
 let findMinNumber = (n) => {
@@ -374,9 +375,10 @@ return k;
 console.log(findMinNumber(16))
 }
 
+*/
 
 
-//while9 - Дано целое число N (>1). Найти наименьшее целое число K, при котором выполняется неравенство: 3^K > N.
+/* While9 - Дано целое число N (>1). Найти наименьшее целое число K, при котором выполняется неравенство: 3^K > N.
 
 {
     let findMinNumber = (n) => {
@@ -389,10 +391,11 @@ console.log(findMinNumber(16))
     console.log(findMinNumber(27))
 }
 
+*/
 
 
-//while17 - Дано целое число N (>0). 
-// Используя операции деления нацело и взятия остатка от деления, вывести все его цифры, начиная с самой правой (разряда единиц)
+/* While17 - Дано целое число N (>0). 
+Используя операции деления нацело и взятия остатка от деления, вывести все его цифры, начиная с самой правой (разряда единиц)
 
 {
 let displayDigits = (n) => {
@@ -404,11 +407,11 @@ let displayDigits = (n) => {
 }
 console.log(displayDigits(141))
 }
-
 */
 
-//while24 - Дано целое число N (> 1). Проверить, является ли число N числом Фибоначчи. 
-// Если является, то вывести TRUE, если нет — вывести FALSE.
+
+/* While24 - Дано целое число N (> 1). Проверить, является ли число N числом Фибоначчи. 
+ Если является, то вывести TRUE, если нет — вывести FALSE.
 
 let IsFibonacci = (n) => {
     let i = 1;
@@ -424,6 +427,65 @@ let IsFibonacci = (n) => {
     return m;
 }
 console.log(IsFibonacci(144))
+*/
 
+/* Series2 - Даны десять вещественных чисел. Найти их произведение.
 
+let numbers = [2,5,1,7,4,11,9,13,2,0.5]
 
+let MultiplyNumbers = (numbers) => {
+    let MultResult = 1;
+for (i = 0; i <= numbers.length - 1; i++) {
+MultResult *= numbers[i]
+}
+return MultResult;
+}
+
+console.log(MultiplyNumbers(numbers))
+*/
+
+/* Series3 - Даны десять вещественных чисел. Найти их среднее арифметическое.
+
+let numbers = [2,5,1,7,4,11,9,13,2,0.5]
+
+let ArithmeticMean = (numbers) => {
+    let sum = 0;
+for (i = 0; i <= numbers.length - 1; i++) {
+sum += numbers[i]
+}
+sum /= numbers.length
+return sum;
+}
+
+console.log(ArithmeticMean(numbers))
+*/
+
+/* Proc1 - Описать функцию PowerA3(A, B), вычисляющую третью степень числа A и возвращающую ее.
+
+let PowerA3 = (A, B) => {
+    A = Math.pow(A,3)
+    return A;
+}
+
+console.log(PowerA3(6,5))
+*/
+
+// Описать функцию DigitCountSum(K, C, S), 
+// находящую количество C цифр целого положительного числа K, а также их сумму S (K — входной, C и S — выходные параметры целого типа).
+
+let DigitCountSum = (K) => {
+    let C = 0;
+    let S = 0;
+    let Leftover = 0;
+    while (K >= 10) {
+        Leftover = K % 10;
+        S += Leftover;
+        K = Math.floor(K / 10);
+        C++;
+    }
+    S+=K;
+    C++;
+    console.log(`Количество цифр: ${C}`, `Сумма цифр: ${S}`);
+}
+
+DigitCountSum(1988)
