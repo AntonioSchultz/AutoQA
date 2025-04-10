@@ -413,6 +413,7 @@ console.log(displayDigits(141))
 /* While24 - Дано целое число N (> 1). Проверить, является ли число N числом Фибоначчи. 
  Если является, то вывести TRUE, если нет — вывести FALSE.
 
+{
 let IsFibonacci = (n) => {
     let i = 1;
     let j = 1;
@@ -427,10 +428,12 @@ let IsFibonacci = (n) => {
     return m;
 }
 console.log(IsFibonacci(144))
+}
 */
 
 /* Series2 - Даны десять вещественных чисел. Найти их произведение.
 
+{
 let numbers = [2,5,1,7,4,11,9,13,2,0.5]
 
 let MultiplyNumbers = (numbers) => {
@@ -442,10 +445,12 @@ return MultResult;
 }
 
 console.log(MultiplyNumbers(numbers))
+}
 */
 
 /* Series3 - Даны десять вещественных чисел. Найти их среднее арифметическое.
 
+{
 let numbers = [2,5,1,7,4,11,9,13,2,0.5]
 
 let ArithmeticMean = (numbers) => {
@@ -458,21 +463,25 @@ return sum;
 }
 
 console.log(ArithmeticMean(numbers))
+}
 */
 
 /* Proc1 - Описать функцию PowerA3(A, B), вычисляющую третью степень числа A и возвращающую ее.
 
+{
 let PowerA3 = (A, B) => {
     A = Math.pow(A,3)
     return A;
 }
 
 console.log(PowerA3(6,5))
+}
 */
 
-// Описать функцию DigitCountSum(K, C, S), 
-// находящую количество C цифр целого положительного числа K, а также их сумму S (K — входной, C и S — выходные параметры целого типа).
+/* Proc6 - Описать функцию DigitCountSum(K, C, S), 
+находящую количество C цифр целого положительного числа K, а также их сумму S (K — входной, C и S — выходные параметры целого типа).
 
+{
 let DigitCountSum = (K) => {
     let C = 0;
     let S = 0;
@@ -489,3 +498,34 @@ let DigitCountSum = (K) => {
 }
 
 DigitCountSum(1988)
+}
+
+*/
+
+//MinMax1 - Дано целое число N. Сгенерируйте массив из N случайных целых чисел. 
+// Найти минимальный и максимальный из элементов данного массива и вывести их в указанном порядке.
+
+{
+let NumbersArray = (N) => {
+    let element = 0;
+    let NumbersArray = [];
+
+    for (i = 0; i<N; i++) {
+        element = Math.floor(Math.random()*100)
+        NumbersArray[i] = element;
+    }
+    console.log(NumbersArray)
+    let min = NumbersArray[0];
+    let max = NumbersArray[0];
+    for (j = 1; j < NumbersArray.length; j++) {
+            if (NumbersArray[j] < min) {
+                min = NumbersArray[j]
+            }
+            else if (NumbersArray[j] > max) {
+                max = NumbersArray[j]}      
+    }
+    console.log(`Минимум: ${min}`, `Максимум: ${max}`);
+}
+
+NumbersArray(8)
+}
