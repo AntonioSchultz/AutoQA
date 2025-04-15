@@ -418,16 +418,14 @@ let IsFibonacci = (n) => {
     let i = 1;
     let j = 1;
     let k = 0;
-    let m;
     while (n > k) {
         k = i + j
         i = j;
         j = k;
-        m = (n === k)
     }
-    return m;
+    return (n===k);
 }
-console.log(IsFibonacci(144))
+console.log(IsFibonacci(45))
 }
 */
 
@@ -502,7 +500,7 @@ DigitCountSum(1988)
 
 */
 
-//MinMax1 - Дано целое число N. Сгенерируйте массив из N случайных целых чисел. 
+/* MinMax1 - Дано целое число N. Сгенерируйте массив из N случайных целых чисел. 
 // Найти минимальный и максимальный из элементов данного массива и вывести их в указанном порядке.
 
 {
@@ -528,4 +526,122 @@ let NumbersArray = (N) => {
 }
 
 NumbersArray(8)
+}
+*/
+
+//Дано целое число N и набор из N прямоугольников, заданных своими сторонами — объектами c парами рандомных чисел {a, b}. 
+// Найти минимальную и максимальную площадь прямоугольников из данного набора. 
+// Пример массива на JS: "[{a: 4, b: 5},{a: 1, b: 7},{a: 1, b: 6},{a: 2, b: 2},{a: 1, b: 9}]"
+
+/*
+{
+const RectanglesArray = (n) => {
+    let array = [];
+    for (i = 0; i < n; i++) {
+        array[i] = {
+               a: Math.floor(Math.random()*100),
+               b: Math.floor(Math.random()*100)
+            };
+    }
+    let min = array[0].a * array[0].b
+    let max = array[0].a * array[0].b
+    let square;
+
+    for (i = 1; i < array.length; i++) {
+        square = array[i].a * array[i].b;
+            if (square < min) {
+            min = square;
+            }
+            else if (square > max) {
+            max = square;    
+            }
+    }
+    console.log(array)
+    return [`Минимальная площадь: ${min}`,`Максимальная площадь: ${max}`];
+}
+
+console.log(RectanglesArray(3))
+}
+*/
+
+// Arrays1 - дан массив A размера N и целое число K (1 ≤ K ≤ N). 
+// Преобразовать массив, увеличив каждый его элемент на исходное значение элемента AK
+/*
+{
+function modifyArray(n,k) {
+let array = [];
+for (i = 0; i < n; i++) {
+    array[i] = Math.floor(Math.random()*100)
+}
+console.log(array)
+for (i = 0; i < array.length; i++) {
+    array[i] *= k;
+}
+return array;
+}
+
+console.log(modifyArray(3,4))
+}
+*/
+
+// Arrays2 - Дан целочисленный массив размера N. Увеличить все четные числа, содержащиеся в массиве, на исходное значение первого четного числа. 
+// Если четные числа в массиве отсутствуют, то оставить массив без изменений.
+
+/*
+{
+    function modifyArray2(n) {
+        let array = [];
+
+        for (let i = 0; i < n; i++) {
+        array[i] = Math.floor(Math.random()*100)
+        }
+        console.log(array)
+
+        let firstEvenNumber = 0;
+        let k;
+
+        for (let i = 0; i < array.length; i++) {
+           if ((array[i] % 2 === 0)) {
+            firstEvenNumber = array[i];
+            k = i;
+            break;
+           }     
+        }
+
+        for (let i = k; i < array.length; i++) {
+            if ((array[i] % 2 === 0)) {
+            array[i] += firstEvenNumber;
+            }
+        }
+        return array;
+    }
+
+    console.log(modifyArray2(5))
+}
+    */
+
+// Arrays3 - Дан целочисленный массив размера N. 
+// Вывести все содержащиеся в данном массиве четные числа в порядке убывания их индексов, а также их количество.
+
+
+{
+    function showEvenNumbers(n) {
+        let array = [];
+
+        for (let i = 0; i < n; i++) {
+        array[i] = Math.floor(Math.random()*100)
+        }
+        console.log(array)
+
+        let order = [];
+        let counter = 0;
+        for (let i = array.at(-1); i >= 0; i--) {
+            if ((array[i] % 2 === 0)) {
+                order.push(array[i]);
+                counter++
+            }
+        }
+        console.log(`Четные числа: ${order}`,`Количество: ${counter}`)
+    }
+    showEvenNumbers(7)
 }
