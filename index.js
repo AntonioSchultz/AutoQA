@@ -529,7 +529,7 @@ NumbersArray(8)
 }
 */
 
-//Дано целое число N и набор из N прямоугольников, заданных своими сторонами — объектами c парами рандомных чисел {a, b}. 
+//MinMax2 - Дано целое число N и набор из N прямоугольников, заданных своими сторонами — объектами c парами рандомных чисел {a, b}. 
 // Найти минимальную и максимальную площадь прямоугольников из данного набора. 
 // Пример массива на JS: "[{a: 4, b: 5},{a: 1, b: 7},{a: 1, b: 6},{a: 2, b: 2},{a: 1, b: 9}]"
 
@@ -623,7 +623,7 @@ console.log(modifyArray(3,4))
 // Arrays3 - Дан целочисленный массив размера N. 
 // Вывести все содержащиеся в данном массиве четные числа в порядке убывания их индексов, а также их количество.
 
-
+/*
 {
     function showEvenNumbers(n) {
         let array = [];
@@ -645,3 +645,77 @@ console.log(modifyArray(3,4))
     }
     showEvenNumbers(7)
 }
+*/
+
+//Array4 (???)- Дан массив ненулевых целых чисел размера N. Проверить, образуют ли его элементы число фибоначи. 
+// (Число фибоначи - 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181)
+/*
+{
+let isArrayFibonacci = (n) => {
+    let array = [];
+    for (let i = 0; i < n; i++) {
+        array[i] = Math.floor(Math.random()*100 + 1)
+    }
+    console.log(array);
+    
+    let k;
+    
+    for (let i = array.at(-1); i > 1; i--) {
+            k = (array[i] - array[i-1] === array[i-2])
+    }
+    return k;
+}
+
+console.log(isArrayFibonacci(4))
+
+}
+*/
+
+// Array5 - Сформировать массив длинной N. Проверить чередуются ли в нем четные и нечетные числа.
+
+/*
+{
+    let evenNotEvenArray = (n) => {
+        let array = [];
+        for (let i = 0; i < n; i++) {
+           array[i] = Math.floor(Math.random()*100 + 1)
+        }
+        console.log(array);
+
+        let k;
+
+        for (let i = 0; i < array.length - 1; i++) {
+            if (k = ((array[i] + array[i+1]) % 2 !== 0)) {
+                continue;
+            }
+            else break;
+        }
+        return k;
+    }
+    console.log(evenNotEvenArray(4))
+}
+    */
+
+//Array6 - Сформировать массив длинной N. Проверить чередуются ли в нем отрицательные и положительные числа.
+{
+    let negativePositiveArray = (n) => {
+        
+        let array = [];
+        for (let i = 0; i < n; i++) {
+           array[i] = Math.floor(Math.random()*100 - 30)
+        }
+        console.log(array);
+
+        let k;
+
+            for (let i = 0; i < array.length - 1; i++) {
+                if (k = (array[i]*array[i+1] < 0)) {
+                    continue;
+                }
+                else break;
+            }
+            return k;
+    }
+    console.log(negativePositiveArray(4))
+}
+
