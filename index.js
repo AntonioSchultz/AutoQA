@@ -651,7 +651,7 @@ console.log(modifyArray(3,4))
 // (Число фибоначи - 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181)
 /*
 {
-let isArrayFibonacci = (n) => {
+const isArrayFibonacci = (n) => {
     let array = [];
     for (let i = 0; i < n; i++) {
         array[i] = Math.floor(Math.random()*100 + 1)
@@ -675,15 +675,13 @@ console.log(isArrayFibonacci(4))
 
 /*
 {
-    let evenNotEvenArray = (n) => {
+    const evenNotEvenArray = (n) => {
         let array = [];
         for (let i = 0; i < n; i++) {
            array[i] = Math.floor(Math.random()*100 + 1)
         }
         console.log(array);
-
         let k;
-
         for (let i = 0; i < array.length - 1; i++) {
             if (k = ((array[i] + array[i+1]) % 2 !== 0)) {
                 continue;
@@ -697,25 +695,65 @@ console.log(isArrayFibonacci(4))
     */
 
 //Array6 - Сформировать массив длинной N. Проверить чередуются ли в нем отрицательные и положительные числа.
+
+/*
 {
-    let negativePositiveArray = (n) => {
+    const negativePositiveArray = (n) => {
         
         let array = [];
         for (let i = 0; i < n; i++) {
            array[i] = Math.floor(Math.random()*100 - 30)
         }
         console.log(array);
-
         let k;
-
-            for (let i = 0; i < array.length - 1; i++) {
-                if (k = (array[i]*array[i+1] < 0)) {
-                    continue;
-                }
-                else break;
+        for (let i = 0; i < array.length - 1; i++) {
+            if (k = (array[i]*array[i+1] < 0)) {
+                continue;
             }
-            return k;
+            else break;
+        }
+        return k;
     }
     console.log(negativePositiveArray(4))
 }
+*/
 
+//Array7 - Дан массив A размера N. Найти минимальный элемент из его элементов с четными номерами (с четными индексами)
+
+/*
+{
+    const minEvenNumberofArray = (n) => {
+        
+        let array = [];
+        for (let i = 0; i < n; i++) {
+           array[i] = Math.floor(Math.random()*100 + 1)
+        }
+        console.log(array);
+        
+        let min = array[0];
+
+        for (let i = 2; i < array.length; i+=2) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        return min;
+    }
+    console.log(minEvenNumberofArray(6))
+}
+*/
+
+//Array8 - cформировать объект формата {a: 1, b: 2, c: 3, d: 4...}
+
+{
+    let letters = ["a","b","c","d","e","f","g"];
+
+    const formObject = (array) => {
+        let object = {};
+        for (let i = 0; i < array.length; i++) {
+            object[array[i]] = i+1;
+        }
+        return object;
+    }
+console.log(formObject(letters))
+}
