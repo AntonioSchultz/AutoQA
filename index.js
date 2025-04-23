@@ -807,8 +807,8 @@ console.log(definePersons(people));
     const changeScore = (array) => {
         let min = array[0].score;
         let max = array[0].score;
-        let minIndex;
-        let maxIndex;
+        let minIndex = 0;
+        let maxIndex = 0;
 
         for (let i = 1; i < array.length; i++) {
             if (array[i].score <= min) {
@@ -857,6 +857,7 @@ console.log(definePersons(people));
 
 // Arrays13 - Дан массив объектов [{a: 1, b: 3, c: 2},{a: 4, b: 3, c: 7},{a:2, b: 3, c: 5}] Продублировать объект, содержащий ее максимальный элемент
 
+/*
 {
 let arrayOfObjects = [{a: 1, b: 3, c: 2},{a: 4, b: 3, c: 7},{a:2, b: 3, c: 5}];
 
@@ -874,7 +875,8 @@ const addMaxElement = (array) => {
         counter++;
     }
     array.push(array[index]);
-    return array;
+   return array;
 }
 console.log(addMaxElement(arrayOfObjects))
 }
+*/
