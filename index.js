@@ -574,8 +574,9 @@ for (i = 0; i < n; i++) {
     array[i] = Math.floor(Math.random()*100)
 }
 console.log(array)
+const AK = array[k-1];
 for (i = 0; i < array.length; i++) {
-    array[i] *= k;
+    array[i] += AK;
 }
 return array;
 }
@@ -634,44 +635,43 @@ console.log(modifyArray(3,4))
         console.log(array)
 
         let order = [];
-        let counter = 0;
         for (let i = array.at(-1); i >= 0; i--) {
             if ((array[i] % 2 === 0)) {
                 order.push(array[i]);
-                counter++
             }
         }
-        console.log(`Четные числа: ${order}`,`Количество: ${counter}`)
+        console.log(`Четные числа: ${order}`,`Количество: ${order.length}`)
     }
     showEvenNumbers(7)
 }
 */
 
-//Array4 (???)- Дан массив ненулевых целых чисел размера N. Проверить, образуют ли его элементы число фибоначи. 
+// Arrays4 - Дан массив ненулевых целых чисел размера N. Проверить, образуют ли его элементы число фибоначи. 
 // (Число фибоначи - 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181)
 /*
 {
-const isArrayFibonacci = (n) => {
-    let array = [];
-    for (let i = 0; i < n; i++) {
-        array[i] = Math.floor(Math.random()*100 + 1)
+const isArrayFibonacci = (array) => {
+    const fullArray = [0,1,1];
+
+    for (let i = 3; fullArray.at(-1) < array.at(-1); i++) {
+    fullArray[i] = fullArray[i-1] + fullArray[i-2]
     }
-    console.log(array);
-    
-    let k;
-    
-    for (let i = array.at(-1); i > 1; i--) {
-            k = (array[i] - array[i-1] === array[i-2])
+    console.log(fullArray)
+    let k = false;
+
+    for (let i = array.length - 1, j = fullArray.length - 1; i > 1; i--,j--) {
+        console.log(array[i], fullArray[j])
+            k = (array[i] === fullArray[j])
     }
     return k;
 }
 
-console.log(isArrayFibonacci(4))
-
+console.log(isArrayFibonacci([55,89,144]))
 }
 */
 
-// Array5 - Сформировать массив длинной N. Проверить чередуются ли в нем четные и нечетные числа.
+
+// Arrays5 - Сформировать массив длинной N. Проверить чередуются ли в нем четные и нечетные числа.
 
 /*
 {
@@ -681,7 +681,7 @@ console.log(isArrayFibonacci(4))
            array[i] = Math.floor(Math.random()*100 + 1)
         }
         console.log(array);
-        let k;
+        let k = false;
         for (let i = 0; i < array.length - 1; i++) {
             if (k = ((array[i] + array[i+1]) % 2 !== 0)) {
                 continue;
@@ -692,9 +692,9 @@ console.log(isArrayFibonacci(4))
     }
     console.log(evenNotEvenArray(4))
 }
-    */
+*/   
 
-//Array6 - Сформировать массив длинной N. Проверить чередуются ли в нем отрицательные и положительные числа.
+// Arrays6 - Сформировать массив длинной N. Проверить чередуются ли в нем отрицательные и положительные числа.
 
 /*
 {
@@ -718,7 +718,7 @@ console.log(isArrayFibonacci(4))
 }
 */
 
-//Array7 - Дан массив A размера N. Найти минимальный элемент из его элементов с четными номерами (с четными индексами)
+// Arrays7 - Дан массив A размера N. Найти минимальный элемент из его элементов с четными номерами (с четными индексами)
 
 /*
 {
@@ -743,8 +743,8 @@ console.log(isArrayFibonacci(4))
 }
 */
 
-//Array8 - cформировать объект формата {a: 1, b: 2, c: 3, d: 4...}
-
+// Arrays8 - cформировать объект формата {a: 1, b: 2, c: 3, d: 4...}
+/*
 {
     let letters = ["a","b","c","d","e","f","g"];
 
@@ -756,4 +756,125 @@ console.log(isArrayFibonacci(4))
         return object;
     }
 console.log(formObject(letters))
+}
+*/
+
+// Arrays9 - дан массив объектов [{name: "vasya", age: 33}, {name: "petya", age: 22}, {name: "Sacha": 23}, {name: "kolya": age: 46}] 
+// Сформировать новый массив объектов из объектов, у которых age < 30
+
+/*
+{
+    const people = [{name: "vasya", age: 33}, {name: "petya", age: 22}, {name: "Sacha", age: 23}, {name: "kolya", age: 46}]
+
+    const definePersons = (array) => {
+        let finalArray = [];
+        for (i = 0; i < array.length; i++) {
+            if (array[i].age < 30) {
+                finalArray.push(array[i])
+            }
+        }
+        return finalArray;
+    }
+console.log(definePersons(people));
+}
+*/
+
+// Arrays10 - Дан объект координат, вида {a: 1,5, b: 3,6, c: 7,2, d: 8,2, e: 1,2} вычислить среднюю координату в заданном объекте.
+
+/*
+{
+    const coordinates = {a: 1.5, b: 3.6, c: 7.2, d: 8.2, e: 1.2}
+
+    const calculateAverageCoordinate = (object) => {
+        let coordinate = 0;
+        for(let key in object) {
+            coordinate += object[key];
+        }
+        return (coordinate = coordinate/5);
+    }
+    console.log(calculateAverageCoordinate(coordinates))
+}
+*/
+
+// Arrays11 - Дан массив объектов(учеников в классе) вида [{name: "vasya", age: 12, score: 4}, {name: "petya", age: 13,score: 3}, {name: "Sacha": 12, score: 5}, 
+// {name: "kolya": age: 13, score: 5}].
+// Поменять score в объекте с минимальным значением на максимальное.
+
+/*
+{
+    const pupils = [{name: "vasya", age: 12, score: 4}, {name: "petya", age: 13, score: 3}, {name: "Sacha", age: 12, score: 5}, {name: "kolya", age: 13, score: 5}]
+
+    const changeScore = (array) => {
+        let min = array[0].score;
+        let max = array[0].score;
+        let minIndex;
+        let maxIndex;
+
+        for (let i = 1; i < array.length; i++) {
+            if (array[i].score <= min) {
+                min = array[i].score
+                minIndex = i;
+            }
+            else if (array[i].score >= max) {
+                max = array[i].score
+                maxIndex = i;
+            }
+        }
+        console.log(`Минимальное значение: ${min}`, `Индекс min: ${minIndex}`, `Максимальное значение: ${max}`, `Индекс max: ${maxIndex}`)
+
+        let maxElement = array[maxIndex].score;
+        array[minIndex].score = maxElement;
+
+        console.log(array)
+    }
+    changeScore(pupils)
+}
+*/
+
+// Arrays12 - Дан объект координат, вида {a: {x: 1.5, y: 2.3}, b: {x: 3.6, y: 6.5}, c: {x: 7.2, y: 3.3}, d: {x: 8.2, y: 5.5}, e: {x: 1.2, y: 3.7}} 
+// вычислить среднюю координату в заданном объекте
+
+/*
+{
+    const coordinates = {a: {x: 1.5, y: 2.3}, b: {x: 3.6, y: 6.5}, c: {x: 7.2, y: 3.3}, d: {x: 8.2, y: 5.5}, e: {x: 1.2, y: 3.7}}
+
+    const calculateAverageCoordinate = (object) => {
+        let sumCoordinateX = 0;
+        let sumCoordinateY = 0;
+        let finalObject = {};
+
+        for (key in object) {
+            sumCoordinateX += object[key].x;
+            sumCoordinateY += object[key].y;
+        }
+        finalObject.x = sumCoordinateX / 5;
+        finalObject.y = sumCoordinateY / 5;
+        return finalObject;
+    }
+    console.log(calculateAverageCoordinate(coordinates))
+}
+*/
+
+// Arrays13 - Дан массив объектов [{a: 1, b: 3, c: 2},{a: 4, b: 3, c: 7},{a:2, b: 3, c: 5}] Продублировать объект, содержащий ее максимальный элемент
+
+{
+let arrayOfObjects = [{a: 1, b: 3, c: 2},{a: 4, b: 3, c: 7},{a:2, b: 3, c: 5}];
+
+const addMaxElement = (array) => {
+    let maxElement = 0;
+    let sum = 0;
+    let counter = 0;
+    let index = 0;
+    for (let value of array) {
+        sum = value.a + value.b + value.c;
+        if (sum > maxElement) {
+            maxElement = sum;
+            index = counter;
+        }
+        counter++;
+    }
+    array.push(array[index]);
+    return array;
+}
+console.log(addMaxElement(arrayOfObjects))
 }
