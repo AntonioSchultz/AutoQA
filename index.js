@@ -880,3 +880,20 @@ const addMaxElement = (array) => {
 console.log(addMaxElement(arrayOfObjects))
 }
 */
+
+// Arrays14 - дан массив формата ['a','v','w','u','q','p','i'], перевести его в объект формата {a: 0, v:1, w:2,u:3, q:4, p:5, i:6}
+
+/*
+{
+const arrayOfLetters = ['a','v','w','u','q','p','i'];
+
+const transformArray = (array) => {
+    let finalObject = {};
+    for (let i = 0; i < array.length; i++) {
+        finalObject[array[i]] = i;
+    }
+    return finalObject;
+}
+console.log(transformArray(arrayOfLetters))
+}
+*/
