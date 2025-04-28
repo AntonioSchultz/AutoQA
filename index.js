@@ -897,3 +897,100 @@ const transformArray = (array) => {
 console.log(transformArray(arrayOfLetters))
 }
 */
+
+// Arrays15 - Дан массив объектов [{a: 5, b: 4, c:6},{a: 2, b: 1, c: 7},{a:2, b: 3, c: 5}] 
+// Получить объект с максимальной суммой значений и Сформировать массив из сумм объектов (a + b + c)
+
+/*
+{
+const arrayOfObjects = [{a: 5, b: 4, c:6},{a: 2, b: 1, c: 7},{a:2, b: 3, c: 5}]
+
+const formNewArray = (array) => {
+    let max = 0;
+    let sum = 0;
+    let index = 0;
+    let newObject = [];
+
+    for (let i = 0; i < array.length; i++) {
+        sum = array[i].a + array[i].b + array[i].c
+        newObject.push(sum)
+        if (sum > max) {
+            max = sum;
+            index = i;
+        }
+    }
+    console.log(array[index], newObject);
+}
+formNewArray(arrayOfObjects)
+}
+*/
+
+// Arrays16 - Дан массив формата ['2','5','1','4,'3','6','0'] Перевести строки в числа и отсортировать их в порядке возрастания. 
+// Сформировать из этих значений объект, формата {'2': 0, '5':1, '1':2, '4':3, '3':4, '6':5, '0':6}
+
+/*
+{
+
+    const arrayOfNumbers = ['2','5','1','4','3','6','0'];
+
+    const transformArray = (array) => {
+        let newArrayOfNumbers = [];
+        let finalObject = {};
+
+        for (let i = 0; i < array.length; i++) {
+            newArrayOfNumbers.push(+array[i]);
+        }
+
+        newArrayOfNumbers.sort((a,b) => a - b);
+
+        for (let i = 0; i < array.length; i++) {
+            finalObject[array[i]] = newArrayOfNumbers[i];
+        }       
+        return finalObject;
+    }
+    console.log(transformArray(arrayOfNumbers))
+
+}
+    */
+
+// Arrays17 - eсть массив формата [4,8,2,8,6], получить из него массив формата [[2,2],[4,4],[1,1],[4,4],[3,3]]
+
+/*
+{
+    const arrayOfNumbers = [4,8,2,8,6]
+
+    const splitDigits = (array) => {
+        let half = 0;
+        for (let i = 0; i < array.length; i++) {
+            half = array[i] / 2;
+            arrayOfNumbers.splice(i,1,[half,half])
+        }
+        return array;
+    }
+    
+    console.log(splitDigits(arrayOfNumbers))
+
+}
+*/
+
+// Arrays18 - eсть массив формата [2,3,1,4,2], получить из него массив формата [[1,2],[1,2,3],[1],[1,2,3,4],[1,2]]
+
+/*
+{
+const arrayOfNumbers = [2,3,1,4,2]
+
+const countToItem = (array) => {
+
+    for (let i = 0; i < array.length; i++) {
+        let countableArray = [];
+
+        for (let j = 1; j <= array[i]; j++) {
+            countableArray.push(j)
+        }
+        array.splice(i,1,countableArray)
+    }
+    return array;
+}
+console.log(countToItem(arrayOfNumbers))
+}
+*/
