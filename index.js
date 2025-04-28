@@ -977,7 +977,7 @@ formNewArray(arrayOfObjects)
 
 /*
 {
-const arrayOfNumbers = [2,3,1,4,2]
+const arrayOfNumbers = [2,3,1,4,2];
 
 const countToItem = (array) => {
 
@@ -985,12 +985,35 @@ const countToItem = (array) => {
         let countableArray = [];
 
         for (let j = 1; j <= array[i]; j++) {
-            countableArray.push(j)
+            countableArray.push(j);
         }
-        array.splice(i,1,countableArray)
+        array.splice(i,1,countableArray);
     }
     return array;
 }
 console.log(countToItem(arrayOfNumbers))
 }
 */
+
+// Arrays19 - Есть массив, формата [4,8,2,8,6] получить из него объект, формата { '2':2, '4':4, '1':1, '4':4, '3':3}
+
+{
+    const arrayOfNumbers = [4,8,2,8,6];
+
+    const createObject = (array) => {
+
+        let finalObject = new Object();
+
+        let half = 0;
+        
+        array.forEach(element => {
+            half = element / 2;
+
+            finalObject[half] = half;
+            
+        });
+        return finalObject;
+    }
+console.log(createObject(arrayOfNumbers))
+
+}
