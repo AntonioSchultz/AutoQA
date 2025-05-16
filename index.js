@@ -997,6 +997,7 @@ console.log(countToItem(arrayOfNumbers))
 
 // Arrays19 - Есть массив, формата [4,8,2,8,6] получить из него объект, формата { '2':2, '4':4, '1':1, '4':4, '3':3}
 
+/*
 {
     const arrayOfNumbers = [4,8,2,8,6];
 
@@ -1015,5 +1016,153 @@ console.log(countToItem(arrayOfNumbers))
         return finalObject;
     }
 console.log(createObject(arrayOfNumbers))
+}
+*/
 
+//Arrays20 - Найти в данном массиве объектов title объект с самым длинным normalized_job_title 
+// и поменять местами объекты массива первый с последним https://gist.github.com/Greyewi/e969847c8b901357c9d2f9c9e6a1ab27
+
+
+{
+let title = [
+    {
+        "uuid": "26bc4486dfd0f60b3bb0d8d64e001800",
+        "title": "1st Grade Teacher",
+        "normalized_job_title": "1st grade teacher",
+        "parent_uuid": "51cc95467c1844c7dc1d923265c023b2"
+    },
+    {
+        "uuid": "9be6e14491305132c175cb1781a3356c",
+        "title": "1st Pressman",
+        "normalized_job_title": "1st pressman",
+        "parent_uuid": "96f1cf15fe5880d8660c70f0756944ab"
+    },
+    {
+        "uuid": "d38d16bab3f9f25ae34ae3e2aad254d4",
+        "title": "1st Pressman On Web Press",
+        "normalized_job_title": "1st pressman on web press",
+        "parent_uuid": "96f1cf15fe5880d8660c70f0756944ab"
+    },
+    {
+        "uuid": "8576a78b5c1cae3a567ca7fd34500357",
+        "title": "21 Dealer",
+        "normalized_job_title": "21 dealer",
+        "parent_uuid": "4be080220c824dcb435d59ebf1c3ce80"
+    },
+    {
+        "uuid": "a59278d7f653db37e54a270345a91a05",
+        "title": "2nd Grade Teacher",
+        "normalized_job_title": "2nd grade teacher",
+        "parent_uuid": "51cc95467c1844c7dc1d923265c023b2"
+    },
+    {
+        "uuid": "9c631442c4966cd3e5a9e52fc70aff1c",
+        "title": "2nd Pressman",
+        "normalized_job_title": "2nd pressman",
+        "parent_uuid": "96f1cf15fe5880d8660c70f0756944ab"
+    },
+    {
+        "uuid": "f5a2151d370ebca7b49778e036a287e8",
+        "title": "2 Year Olds Preschool Teacher",
+        "normalized_job_title": "2 year olds preschool teacher",
+        "parent_uuid": "d78b3ba8b749686d739480ee77f9e219"
+    },
+    {
+        "uuid": "af2e31c2c64ae223b06eb7f0cbf59a98",
+        "title": "3D Animator",
+        "normalized_job_title": "3d animator",
+        "parent_uuid": "caa551520f21c7c220716a8f82806246"
+    },
+    {
+        "uuid": "ac029293b0ea43f168b004c4f04fca31",
+        "title": "3D Artist",
+        "normalized_job_title": "3d artist",
+        "parent_uuid": "caa551520f21c7c220716a8f82806246"
+    },
+    {
+        "uuid": "7d37dfe2eface4ae79db093b0a79385d",
+        "title": "3D Designer",
+        "normalized_job_title": "3d designer",
+        "parent_uuid": "caa551520f21c7c220716a8f82806246"
+    },
+    {
+        "uuid": "6cb0a6786c08d6c91a4fc9f61e19f62d",
+        "title": "3D Modeler",
+        "normalized_job_title": "3d modeler",
+        "parent_uuid": "caa551520f21c7c220716a8f82806246"
+    },
+    {
+        "uuid": "ec45194ae348e1bb21415064364f038b",
+        "title": "3D Specialist",
+        "normalized_job_title": "3d specialist",
+        "parent_uuid": "caa551520f21c7c220716a8f82806246"
+    },
+    {
+        "uuid": "4266e89fcaf06973fa23fc6f75b27682",
+        "title": "3D Technologist",
+        "normalized_job_title": "3d technologist",
+        "parent_uuid": "ce1c0fc273d3c803e94a73ff0b54816e"
+    },
+    {
+        "uuid": "0cfb09fa1c6691fd6d77a3d3743fa8bc",
+        "title": "3rd Grade Reading Teacher",
+        "normalized_job_title": "3rd grade reading teacher",
+        "parent_uuid": "51cc95467c1844c7dc1d923265c023b2"
+    },
+    {
+        "uuid": "ac668f6dc8795ace795b2c1f7c889ba4",
+        "title": "3rd Grade Teacher",
+        "normalized_job_title": "3rd grade teacher",
+        "parent_uuid": "51cc95467c1844c7dc1d923265c023b2"
+    },
+    {
+        "uuid": "7826ba3a7150817935915f63b861936b",
+        "title": "3rd Pressman",
+        "normalized_job_title": "3rd pressman",
+        "parent_uuid": "96f1cf15fe5880d8660c70f0756944ab"
+    },
+    {
+        "uuid": "90bc1d89aaee33a96c1b70fef0750d62",
+        "title": "411 Directory Assistance Operator",
+        "normalized_job_title": "411 directory assistance operator",
+        "parent_uuid": "f0fc66d367f370fa64da4780019702cd"
+    },
+    {
+        "uuid": "814eb6844cf824e6945fb02a48f0e569",
+        "title": "4-H Youth Development Specialist",
+        "normalized_job_title": "4h youth development specialist",
+        "parent_uuid": "1028b80a2ce2bfb940b2198f487c6abb"
+    },
+    {
+        "uuid": "772053d8bb2c6e127b0bf216e50285ed",
+        "title": "4th Grade Math Teacher",
+        "normalized_job_title": "4th grade math teacher",
+        "parent_uuid": "51cc95467c1844c7dc1d923265c023b2"
+    },
+    {
+        "uuid": "de0a3e90cdd112dd78120d4c8a9422b2",
+        "title": "4th Grade Teacher",
+        "normalized_job_title": "4th grade teacher",
+        "parent_uuid": "51cc95467c1844c7dc1d923265c023b2"
+    }
+]
+
+let maxTitleLength = (array) => {
+    let maxStringLength = array[0].normalized_job_title.length;
+    let k = 0;
+    let j = array[0];
+    for (let i = 1; i < array.length - 1; i++) {
+        if (array[i].normalized_job_title.length > maxStringLength) {
+            maxStringLength = array[i].normalized_job_title.length;
+            k = i;
+        }
+    }
+    console.log(`Максимальный normalized_job_title: '${array[k].normalized_job_title}' длиной ${array[k].normalized_job_title.length} символа в элементе ${k}`)
+
+    array[0] = array[array.length - 1];
+    array[array.length - 1] = j;
+
+    console.log(array)
+} 
+maxTitleLength(title);
 }
